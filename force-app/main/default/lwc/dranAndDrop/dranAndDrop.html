@@ -1,0 +1,41 @@
+<!--
+  @description       : Drag and Drop LWC component
+  @author            : Frank D'Souza
+  @group             : 
+  @last modified on  : 10-11-2020
+  @last modified by  : Frank D'Souza
+  Modifications Log 
+  Ver   Date         Author          Modification
+  1.0   10-03-2020   Frank D'Souza   Initial Version
+-->
+
+<template>
+    <lightning-card title="Drag and drop">
+        <div class="slds-border_top slds-var-p-top_small slds-var-m-horizontal_large">
+            <template if:true={optsize}>
+                <ul class="slds-has-dividers_around-space slds-var-m-around_medium">
+                    <template for:each={options} for:item="option">
+                        <li key={option.id} class="slds-var-m-horizontal_large slds-var-m-vertical_small">
+                            <c-drag-and-drop-child item-id={option.id} item-title={option.title}
+                                item-subtitle={option.subtitle} item-sequence={option.sequence}
+                                onstartdrag={handleDragStart} onitemdrop={handleDrop} onremoveitem={handleRemoveItem}>
+                            </c-drag-and-drop-child>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <!-- Show no data available -->
+            <template if:false={optsize}>
+                <div class="slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+                    <span class="slds-assistive-text">info</span>
+                    <span class="slds-icon_container slds-icon-utility-database slds-var-m-right_x-small" title="No Data">
+                      <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                        <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#database"></use>
+                      </svg>
+                    </span>
+                    <h2>No data available.</h2>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
