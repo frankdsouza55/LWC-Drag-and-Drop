@@ -1,5 +1,5 @@
 # LWC-Drag-and-Drop
-This is a generic & customizable component built using Salesforce [Lightning Web Components](https://developer.salesforce.com/docs/component-library/documentation/lwc) and [SLDS](https://www.lightningdesignsystem.com/) style which allows the user to reorder a list of items in the desired sequence.
+This is a generic & customizable component built using Salesforce [Lightning Web Components](https://developer.salesforce.com/docs/component-library/documentation/en/lwc) and [SLDS](https://www.lightningdesignsystem.com/) style which allows the user to reorder a list of items in the desired sequence.
 
 ## Demo
 [![YouTube video demo](http://img.youtube.com/vi/6Usg_YlD9yE/0.jpg)](https://youtu.be/6Usg_YlD9yE)
