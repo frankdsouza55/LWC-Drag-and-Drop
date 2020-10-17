@@ -1,6 +1,6 @@
 import { LightningElement } from 'lwc';
 
-export default class DranAndDrop extends LightningElement {
+export default class DragAndDrop extends LightningElement {
     options = [
         {
             'id': 1,
