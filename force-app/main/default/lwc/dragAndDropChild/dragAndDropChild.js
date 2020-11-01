@@ -14,6 +14,8 @@ export default class DragAndDropChild extends LightningElement {
         this.template.querySelector('[data-id="mainDiv"]').classList.remove(className);
     }
 
+    /* Drag events */
+
     handleDragStart() {
         this.addCSS('slds-drop-zone');
         this.dispatchEvent(new CustomEvent('startdrag', {
