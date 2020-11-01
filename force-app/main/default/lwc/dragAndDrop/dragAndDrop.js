@@ -37,18 +37,12 @@ export default class DragAndDrop extends LightningElement {
     dragSource;
     dropDestination;
 
-    get optsize(){
+    get optsize() {
         return this.options.length;
     }
-    
+
     connectedCallback() {
         this.sortOptions();
-    }
-
-    sortOptions() {
-        this.options.sort(function (a, b) {
-            return a.sequence - b.sequence;
-        });
     }
 
     handleDragStart(event) {
@@ -60,7 +54,15 @@ export default class DragAndDrop extends LightningElement {
         this.reorder();
     }
 
+    sortOptions() {
+        // Sort the options based on sequence number
+        this.options.sort(function (a, b) {
+            return a.sequence - b.sequence;
+        });
+    }
+
     resetSequence() {
+        // Reset the sequence number for each item starting from 1
         let seq = 1;
         let oldOptions = this.options;
         oldOptions.forEach(element => {
@@ -70,6 +72,7 @@ export default class DragAndDrop extends LightningElement {
     }
 
     reorder() {
+        // Swap the sequence numbers between the source & destination item and sort them
         let oldOptions = this.options;
         oldOptions.forEach(element => {
             if (element.id === this.dragSource.id) {
@@ -84,6 +87,7 @@ export default class DragAndDrop extends LightningElement {
     }
 
     handleRemoveItem(event) {
+        // Remove an item from the list based on the id of the item clicked
         let removeId = event.detail;
         let index = this.options.findIndex(option => option.id === removeId);
         let oldOptions = this.options;
